@@ -31,7 +31,7 @@ import java.util.Set;
 public class Account {
 
 	@Id
-	@Column(name = "ID")
+	@Column(name = "id")
 	private Long entityId;
 
 	// No need for @Column, mapped automatically to NUMBER
@@ -109,7 +109,6 @@ public class Account {
 
 	/**
 	 * Add a single beneficiary with a 100% allocation percentage.
-	 * 
 	 * @param beneficiaryName the name of the beneficiary (should be unique)
 	 */
 	public void addBeneficiary(String beneficiaryName) {
@@ -118,10 +117,8 @@ public class Account {
 
 	/**
 	 * Add a single beneficiary with the specified allocation percentage.
-	 * 
-	 * @param beneficiaryName      the name of the beneficiary (should be unique)
-	 * @param allocationPercentage the beneficiary's allocation percentage within
-	 *                             this account
+	 * @param beneficiaryName the name of the beneficiary (should be unique)
+	 * @param allocationPercentage the beneficiary's allocation percentage within this account
 	 */
 	public void addBeneficiary(String beneficiaryName, Percentage allocationPercentage) {
 		beneficiaries.add(new Beneficiary(beneficiaryName, allocationPercentage));
