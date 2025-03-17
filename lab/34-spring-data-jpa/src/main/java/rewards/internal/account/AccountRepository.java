@@ -9,7 +9,7 @@ import org.springframework.data.repository.Repository;
  * Objects returned by this repository are guaranteed to be fully initialized
  * and ready to use.
  */
-public interface AccountRepository extends JpaRepository<Account,Long> {
+public interface AccountRepository extends Repository<Account,Long> {
 
 	/**
 	 * Load an account by its credit card.

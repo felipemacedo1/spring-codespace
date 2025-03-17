@@ -1,11 +1,17 @@
 package rewards.internal.restaurant;
 
-import common.money.MonetaryAmount;
-import common.money.Percentage;
+import javax.persistence.AttributeOverride;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
 import rewards.Dining;
 import rewards.internal.account.Account;
 
-import javax.persistence.Transient;
+import common.money.MonetaryAmount;
+import common.money.Percentage;
 
 /**
  * Restaurants calculate how much benefit may be awarded to an account for
@@ -35,7 +41,7 @@ public class Restaurant {
 	// This is not a simple mapping as Percentage is not a simple type.
 	// You need to map Percentage.value from a column in T_RESTAURANT.  If unsure,
 	// look at how Beneficiary does it.
-	@AttributeOverride(name="value", column=@Column(name="BENEFIT_PERCENTAGE"))
+	@AttributeOverride(name="value",column=@Column(name="BENEFIT_PERCENTAGE"))
 	private Percentage benefitPercentage;
 
 
